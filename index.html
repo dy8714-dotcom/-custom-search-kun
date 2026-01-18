@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カスタマイズ検索くん</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>カスタマイズ検索くん</h1>
+            <div class="header-actions">
+                <input type="text" id="bulk-input" class="bulk-input" placeholder="一括検索入力（例: 7203,6758,9984）">
+                <button id="bulk-input-btn" class="header-btn">入力</button>
+                <button id="reset-btn" class="header-btn reset-btn">リセット</button>
+                <button id="export-btn" class="header-btn">エクスポート</button>
+                <button id="import-btn" class="header-btn">インポート</button>
+                <input type="file" id="import-file" accept=".json" style="display: none;">
+            </div>
+        </header>
+
+        <main>
+            <div class="content-wrapper">
+                <!-- 左側: 検索窓 -->
+                <div class="search-section">
+                    <div class="search-boxes">
+                        <!-- 10個の検索窓 -->
+                        <div class="search-row" data-index="0">
+                            <input type="text" class="search-input" placeholder="検索キーワード">
+                            <button class="search-btn">検索</button>
+                        </div>
+                        <div class="search-row" data-index="1">
+                            <input type="text" class="search-input" placeholder="検索キーワード">
+                            <button class="search-btn">検索</button>
+                        </div>
+                        <div class="search-row" data-index="2">
+                            <input type="text" class="search-input" placeholder="検索キーワード">
+                            <button class="search-btn">検索</button>
+                        </div>
+                        <div class="search-row" data-index="3">
+                            <input type="text" class="search-input" placeholder="検索キーワード">
+                            <button class="search-btn">検索</button>
+                        </div>
+                        <div class="search-row" data-index="4">
+                            <input type="text" class="search-input" placeholder="検索キーワード">
+                            <button class="search-btn">検索</button>
+                        </div>
+                        <div class="search-row" data-index="5">
+                            <input type="text" class="search-input" placeholder="検索キーワード">
+                            <button class="search-btn">検索</button>
+                        </div>
+                        <div class="search-row" data-index="6">
+                            <input type="text" class="search-input" placeholder="検索キーワード">
+                            <button class="search-btn">検索</button>
+                        </div>
+                        <div class="search-row" data-index="7">
+                            <input type="text" class="search-input" placeholder="検索キーワード">
+                            <button class="search-btn">検索</button>
+                        </div>
+                        <div class="search-row" data-index="8">
+                            <input type="text" class="search-input" placeholder="検索キーワード">
+                            <button class="search-btn">検索</button>
+                        </div>
+                        <div class="search-row" data-index="9">
+                            <input type="text" class="search-input" placeholder="検索キーワード">
+                            <button class="search-btn">検索</button>
+                        </div>
+                    </div>
+
+                    <!-- Google検索窓 -->
+                    <div class="google-search-section">
+                        <div class="search-row google-row">
+                            <input type="text" id="google-input" class="search-input" placeholder="Google検索">
+                            <button id="google-btn" class="search-btn">検索</button>
+                            <button id="bulk-search-btn" class="bulk-btn" title="複数のキーワードを一度に検索します（1サイトのみ選択時）">一括検索</button>
+                        </div>
+                        <div class="popup-notice">
+                            ※一括検索で複数タブが開かない場合は、ブラウザのアドレスバー右側のポップアップブロックアイコンをクリックして許可してください
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右側: 検索サイト選択 -->
+                <div class="sites-section">
+                    <h3>検索サイト</h3>
+                    <div id="sites-list" class="sites-list">
+                        <!-- JavaScriptで動的に生成 -->
+                    </div>
+                    <div class="sites-actions">
+                        <button id="edit-sites-btn" class="action-btn">ページ追加・編集</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- サイト編集モーダル -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>検索サイトの編集</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="sites-editor">
+                    <!-- JavaScriptで動的に生成 -->
+                </div>
+                <button id="add-site-btn" class="action-btn">サイトを追加</button>
+            </div>
+            <div class="modal-footer">
+                <button id="save-sites-btn" class="btn-primary">保存</button>
+                <button id="cancel-btn" class="btn-secondary">キャンセル</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
