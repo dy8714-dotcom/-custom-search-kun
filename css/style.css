@@ -430,3 +430,211 @@ main {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+/* ========================================
+   📱 スマホ対応（レスポンシブデザイン）
+   ======================================== */
+
+/* タブレット以下（768px未満） */
+@media screen and (max-width: 768px) {
+    body {
+        overflow: auto;
+        height: auto;
+    }
+    
+    .container {
+        height: auto;
+        padding: 10px;
+    }
+    
+    /* ヘッダーを縦並びに */
+    header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+    
+    header h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .header-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .bulk-input {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .header-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    /* メインコンテンツを縦並びに */
+    main {
+        overflow: visible;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        gap: 15px;
+        height: auto;
+    }
+    
+    /* 検索セクション */
+    .search-section {
+        order: 1;
+    }
+    
+    .search-boxes {
+        overflow-y: visible;
+        padding-right: 0;
+        max-height: none;
+    }
+    
+    .search-row {
+        height: auto;
+        min-height: 44px;
+    }
+    
+    .search-input {
+        height: 44px;
+        font-size: 16px;
+        padding: 10px 12px;
+    }
+    
+    .search-btn {
+        height: 44px;
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    
+    /* Google検索セクション */
+    .google-search-section {
+        padding-top: 10px;
+    }
+    
+    .bulk-btn {
+        height: 44px;
+        padding: 10px 16px;
+        font-size: 15px;
+    }
+    
+    /* サイト選択セクション */
+    .sites-section {
+        order: 2;
+        width: 100%;
+        min-width: auto;
+        max-height: 400px;
+        overflow: visible;
+    }
+    
+    .sites-section h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    .sites-list {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    
+    .site-item {
+        padding: 12px;
+        margin-bottom: 8px;
+    }
+    
+    .site-item input[type="checkbox"] {
+        width: 22px;
+        height: 22px;
+        margin-right: 12px;
+    }
+    
+    .site-item label {
+        font-size: 14px;
+    }
+    
+    .action-btn {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+    
+    /* モーダル */
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        max-height: 85vh;
+    }
+    
+    .modal-header {
+        padding: 15px;
+    }
+    
+    .modal-header h2 {
+        font-size: 18px;
+    }
+    
+    .modal-body {
+        padding: 15px;
+    }
+    
+    .site-editor-item {
+        padding: 12px;
+    }
+    
+    .site-editor-item input {
+        font-size: 16px;
+        padding: 10px 12px;
+    }
+    
+    .modal-footer {
+        padding: 12px 15px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+}
+
+/* スマホ（480px未満） */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 8px;
+    }
+    
+    header h1 {
+        font-size: 18px;
+    }
+    
+    .search-row {
+        gap: 6px;
+    }
+    
+    .search-btn {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    .google-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .google-row .search-input,
+    .google-row .search-btn,
+    .google-row .bulk-btn {
+        width: 100%;
+    }
+    
+    .popup-notice {
+        font-size: 10px;
+    }
+}
