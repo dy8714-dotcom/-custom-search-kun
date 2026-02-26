@@ -22,78 +22,144 @@
 
         <main>
             <div class="content-wrapper">
-                <!-- 左側: 検索窓 -->
-                <div class="search-section">
-                    <div class="search-boxes">
-                        <!-- 15個の検索窓 -->
-                        <div class="search-row" data-index="0">
-                            <input type="text" class="search-input" placeholder="検索キーワード">
-                            <button class="search-btn">検索</button>
+                <!-- 検索窓エリア（30個を2列表示） -->
+                <div class="search-section-wide">
+                    <div class="search-columns">
+                        <!-- 左列: 1-15 -->
+                        <div class="search-column">
+                            <div class="search-row" data-index="0">
+                                <input type="text" class="search-input" placeholder="検索キーワード 1">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="1">
+                                <input type="text" class="search-input" placeholder="検索キーワード 2">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="2">
+                                <input type="text" class="search-input" placeholder="検索キーワード 3">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="3">
+                                <input type="text" class="search-input" placeholder="検索キーワード 4">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="4">
+                                <input type="text" class="search-input" placeholder="検索キーワード 5">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="5">
+                                <input type="text" class="search-input" placeholder="検索キーワード 6">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="6">
+                                <input type="text" class="search-input" placeholder="検索キーワード 7">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="7">
+                                <input type="text" class="search-input" placeholder="検索キーワード 8">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="8">
+                                <input type="text" class="search-input" placeholder="検索キーワード 9">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="9">
+                                <input type="text" class="search-input" placeholder="検索キーワード 10">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="10">
+                                <input type="text" class="search-input" placeholder="検索キーワード 11">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="11">
+                                <input type="text" class="search-input" placeholder="検索キーワード 12">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="12">
+                                <input type="text" class="search-input" placeholder="検索キーワード 13">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="13">
+                                <input type="text" class="search-input" placeholder="検索キーワード 14">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="14">
+                                <input type="text" class="search-input" placeholder="検索キーワード 15">
+                                <button class="search-btn">検索</button>
+                            </div>
                         </div>
-                        <div class="search-row" data-index="1">
-                            <input type="text" class="search-input" placeholder="検索キーワード">
-                            <button class="search-btn">検索</button>
-                        </div>
-                        <div class="search-row" data-index="2">
-                            <input type="text" class="search-input" placeholder="検索キーワード">
-                            <button class="search-btn">検索</button>
-                        </div>
-                        <div class="search-row" data-index="3">
-                            <input type="text" class="search-input" placeholder="検索キーワード">
-                            <button class="search-btn">検索</button>
-                        </div>
-                        <div class="search-row" data-index="4">
-                            <input type="text" class="search-input" placeholder="検索キーワード">
-                            <button class="search-btn">検索</button>
-                        </div>
-                        <div class="search-row" data-index="5">
-                            <input type="text" class="search-input" placeholder="検索キーワード">
-                            <button class="search-btn">検索</button>
-                        </div>
-                        <div class="search-row" data-index="6">
-                            <input type="text" class="search-input" placeholder="検索キーワード">
-                            <button class="search-btn">検索</button>
-                        </div>
-                        <div class="search-row" data-index="7">
-                            <input type="text" class="search-input" placeholder="検索キーワード">
-                            <button class="search-btn">検索</button>
-                        </div>
-                        <div class="search-row" data-index="8">
-                            <input type="text" class="search-input" placeholder="検索キーワード">
-                            <button class="search-btn">検索</button>
-                        </div>
-                        <div class="search-row" data-index="9">
-                            <input type="text" class="search-input" placeholder="検索キーワード">
-                            <button class="search-btn">検索</button>
-                        </div>
-                        <div class="search-row" data-index="10">
-                            <input type="text" class="search-input" placeholder="検索キーワード">
-                            <button class="search-btn">検索</button>
-                        </div>
-                        <div class="search-row" data-index="11">
-                            <input type="text" class="search-input" placeholder="検索キーワード">
-                            <button class="search-btn">検索</button>
-                        </div>
-                        <div class="search-row" data-index="12">
-                            <input type="text" class="search-input" placeholder="検索キーワード">
-                            <button class="search-btn">検索</button>
-                        </div>
-                        <div class="search-row" data-index="13">
-                            <input type="text" class="search-input" placeholder="検索キーワード">
-                            <button class="search-btn">検索</button>
-                        </div>
-                        <div class="search-row" data-index="14">
-                            <input type="text" class="search-input" placeholder="検索キーワード">
-                            <button class="search-btn">検索</button>
+
+                        <!-- 右列: 16-30 -->
+                        <div class="search-column">
+                            <div class="search-row" data-index="15">
+                                <input type="text" class="search-input" placeholder="検索キーワード 16">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="16">
+                                <input type="text" class="search-input" placeholder="検索キーワード 17">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="17">
+                                <input type="text" class="search-input" placeholder="検索キーワード 18">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="18">
+                                <input type="text" class="search-input" placeholder="検索キーワード 19">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="19">
+                                <input type="text" class="search-input" placeholder="検索キーワード 20">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="20">
+                                <input type="text" class="search-input" placeholder="検索キーワード 21">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="21">
+                                <input type="text" class="search-input" placeholder="検索キーワード 22">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="22">
+                                <input type="text" class="search-input" placeholder="検索キーワード 23">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="23">
+                                <input type="text" class="search-input" placeholder="検索キーワード 24">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="24">
+                                <input type="text" class="search-input" placeholder="検索キーワード 25">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="25">
+                                <input type="text" class="search-input" placeholder="検索キーワード 26">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="26">
+                                <input type="text" class="search-input" placeholder="検索キーワード 27">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="27">
+                                <input type="text" class="search-input" placeholder="検索キーワード 28">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="28">
+                                <input type="text" class="search-input" placeholder="検索キーワード 29">
+                                <button class="search-btn">検索</button>
+                            </div>
+                            <div class="search-row" data-index="29">
+                                <input type="text" class="search-input" placeholder="検索キーワード 30">
+                                <button class="search-btn">検索</button>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Google検索窓 -->
+                    <!-- Google検索窓と一括検索 -->
                     <div class="google-search-section">
                         <div class="search-row google-row">
                             <input type="text" id="google-input" class="search-input" placeholder="Google検索">
                             <button id="google-btn" class="search-btn">検索</button>
-                            <button id="bulk-search-btn" class="bulk-btn" title="複数のキーワードを一度に検索します（1サイトのみ選択時）">一括検索</button>
+                            <button id="bulk-search-btn" class="bulk-btn" title="30個の検索窓すべてを一度に検索します（1サイトのみ選択時）">一括検索</button>
                         </div>
                         <div class="popup-notice">
                             ※一括検索で複数タブが開かない場合は、ブラウザのアドレスバー右側のポップアップブロックアイコンをクリックして許可してください

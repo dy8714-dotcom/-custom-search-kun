@@ -203,7 +203,7 @@ function performBulkInput() {
         .split(/[,，、\s]+/) // カンマ（半角・全角）、読点、空白文字で分割
         .map(keyword => keyword.trim()) // 前後の空白を削除
         .filter(keyword => keyword.length > 0) // 空文字を除外
-        .slice(0, 15); // 最大15個まで
+        .slice(0, 30); // 最大30個まで
     
     if (keywords.length === 0) {
         alert('有効な検索キーワードが見つかりませんでした');
@@ -399,8 +399,8 @@ function addSiteEditor() {
     const editor = document.getElementById('sites-editor');
     const newIndex = editor.children.length;
     
-    if (newIndex >= 15) {
-        alert('サイトは最大15個まで登録できます');
+    if (newIndex >= 30) {
+        alert('サイトは最大30個まで登録できます');
         return;
     }
     
@@ -472,8 +472,8 @@ function importSites(event) {
                 throw new Error('有効なサイトデータがありません');
             }
             
-            // 最大15個まで
-            sites = validSites.slice(0, 15);
+            // 最大30個まで
+            sites = validSites.slice(0, 30);
             saveSites();
             renderSitesList();
             

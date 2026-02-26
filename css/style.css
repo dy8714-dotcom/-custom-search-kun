@@ -95,21 +95,28 @@ main {
     min-height: 0;
 }
 
-/* 検索セクション */
-.search-section {
+/* 検索セクション（30個を2列表示） */
+.search-section-wide {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
+    overflow: hidden;
 }
 
-.search-boxes {
+.search-columns {
     flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.search-column {
     display: flex;
     flex-direction: column;
     gap: 6px;
-    overflow-y: auto;
-    padding-right: 10px;
 }
 
 .search-row {
@@ -488,14 +495,19 @@ main {
     }
     
     /* 検索セクション */
-    .search-section {
+    .search-section-wide {
         order: 1;
     }
     
-    .search-boxes {
+    .search-columns {
+        grid-template-columns: 1fr;
         overflow-y: visible;
         padding-right: 0;
         max-height: none;
+    }
+    
+    .search-column {
+        gap: 8px;
     }
     
     .search-row {
