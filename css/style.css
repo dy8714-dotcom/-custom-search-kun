@@ -376,11 +376,60 @@ main {
 
 /* サイト編集エディター */
 .site-editor-item {
+    position: relative;
     margin-bottom: 20px;
     padding: 15px;
+    padding-left: 45px; /* ドラッグハンドル用のスペース */
     background-color: #f9f9f9;
     border-radius: 6px;
     border: 1px solid #ddd;
+    cursor: move;
+    transition: all 0.3s ease;
+}
+
+.site-editor-item:hover {
+    background-color: #f0f0f0;
+    border-color: #aaa;
+}
+
+/* ドラッグ中のスタイル */
+.site-editor-item.dragging {
+    opacity: 0.5;
+    background-color: #e3f2fd;
+    border: 2px dashed #2196F3;
+}
+
+/* ドラッグオーバー時のスタイル */
+.site-editor-item.drag-over {
+    border-top: 3px solid #4CAF50;
+    margin-top: 10px;
+}
+
+/* ドラッグハンドル */
+.drag-handle {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #999;
+    cursor: grab;
+    user-select: none;
+}
+
+.drag-handle:active {
+    cursor: grabbing;
+}
+
+/* ヒントメッセージ */
+.drag-hint {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #e3f2fd;
+    border-radius: 4px;
+    border-left: 4px solid #2196F3;
 }
 
 .site-editor-item label {

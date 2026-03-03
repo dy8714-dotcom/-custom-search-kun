@@ -203,7 +203,7 @@ function performBulkInput() {
         .split(/[,，、\s]+/) // カンマ（半角・全角）、読点、空白文字で分割
         .map(keyword => keyword.trim()) // 前後の空白を削除
         .filter(keyword => keyword.length > 0) // 空文字を除外
-        .slice(0, 30); // 最大30個まで
+        .slice(0, 50); // 最大50個まで
     
     if (keywords.length === 0) {
         alert('有効な検索キーワードが見つかりませんでした');
@@ -346,6 +346,9 @@ function openEditModal() {
         editor.appendChild(createSiteEditor(site, index));
     });
     
+    // ドラッグ&ドロップを有効化
+    enableDragAndDrop();
+    
     modal.style.display = 'block';
 }
 
@@ -359,6 +362,13 @@ function createSiteEditor(site, index) {
     const container = document.createElement('div');
     container.className = 'site-editor-item';
     container.dataset.index = index;
+    container.draggable = true; // ドラッグ可能にする
+    
+    // ドラッグハンドル（アイコン）を追加
+    const dragHandle = document.createElement('span');
+    dragHandle.className = 'drag-handle';
+    dragHandle.innerHTML = '☰';
+    dragHandle.title = 'ドラッグして順序を変更';
     
     const nameLabel = document.createElement('label');
     nameLabel.textContent = 'サイト名';
@@ -385,6 +395,7 @@ function createSiteEditor(site, index) {
         container.remove();
     });
     
+    container.appendChild(dragHandle);
     container.appendChild(nameLabel);
     container.appendChild(nameInput);
     container.appendChild(urlLabel);
@@ -399,8 +410,8 @@ function addSiteEditor() {
     const editor = document.getElementById('sites-editor');
     const newIndex = editor.children.length;
     
-    if (newIndex >= 30) {
-        alert('サイトは最大30個まで登録できます');
+    if (newIndex >= 50) {
+        alert('サイトは最大50個まで登録できます');
         return;
     }
     
@@ -472,8 +483,8 @@ function importSites(event) {
                 throw new Error('有効なサイトデータがありません');
             }
             
-            // 最大30個まで
-            sites = validSites.slice(0, 30);
+            // 最大50個まで
+            sites = validSites.slice(0, 50);
             saveSites();
             renderSitesList();
             
@@ -510,6 +521,75 @@ function setupKeyboardNavigation() {
                     }
                 }
             }
+        });
+    });
+}
+
+// ドラッグ&ドロップ機能
+let draggedElement = null;
+
+function enableDragAndDrop() {
+    const editor = document.getElementById('sites-editor');
+    const items = editor.querySelectorAll('.site-editor-item');
+    
+    items.forEach(item => {
+        // ドラッグ開始
+        item.addEventListener('dragstart', function(e) {
+            draggedElement = this;
+            this.classList.add('dragging');
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/html', this.innerHTML);
+        });
+        
+        // ドラッグ終了
+        item.addEventListener('dragend', function(e) {
+            this.classList.remove('dragging');
+            
+            // すべてのドラッグオーバー表示を削除
+            items.forEach(i => i.classList.remove('drag-over'));
+        });
+        
+        // ドラッグオーバー
+        item.addEventListener('dragover', function(e) {
+            if (e.preventDefault) {
+                e.preventDefault();
+            }
+            e.dataTransfer.dropEffect = 'move';
+            
+            if (this !== draggedElement) {
+                this.classList.add('drag-over');
+            }
+            
+            return false;
+        });
+        
+        // ドラッグリーブ
+        item.addEventListener('dragleave', function(e) {
+            this.classList.remove('drag-over');
+        });
+        
+        // ドロップ
+        item.addEventListener('drop', function(e) {
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            }
+            
+            if (draggedElement !== this) {
+                // エディター内のすべてのアイテムを取得
+                const allItems = Array.from(editor.querySelectorAll('.site-editor-item'));
+                const draggedIndex = allItems.indexOf(draggedElement);
+                const targetIndex = allItems.indexOf(this);
+                
+                // 要素を移動
+                if (draggedIndex < targetIndex) {
+                    this.parentNode.insertBefore(draggedElement, this.nextSibling);
+                } else {
+                    this.parentNode.insertBefore(draggedElement, this);
+                }
+            }
+            
+            this.classList.remove('drag-over');
+            return false;
         });
     });
 }
